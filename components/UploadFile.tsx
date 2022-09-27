@@ -14,7 +14,7 @@ const UploadFile = () => {
 
     useEffect(() => {
         files.length? setItems(files): '';
-    });
+    }, [files]);
 
     function onFileChange(e: any) {
         const file = e.target.files[0]
