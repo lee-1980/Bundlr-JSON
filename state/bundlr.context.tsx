@@ -23,6 +23,8 @@ const BundlrContext = createContext<IBundlrHook>({
     bundlrInstance: null
 });
 
+
+// Bundlr Context for bundlr network instance through all components
 const BundlrContextProvider = ({ children }: any): JSX.Element => {
     const toast = useToast()
     const [bundlrInstance, setBundlrInstance] = useState<WebBundlr>();
@@ -37,6 +39,8 @@ const BundlrContextProvider = ({ children }: any): JSX.Element => {
             fetchUploadedFiles();
         }
     }, [bundlrInstance])
+
+    // initializing the Bundlr using devnetwork
 
     const initialiseBundlr = async () => {
         const provider = new providers.Web3Provider(window.ethereum as any);
@@ -154,6 +158,8 @@ const BundlrContextProvider = ({ children }: any): JSX.Element => {
             //     }
             // }
             // }
+            /** Note Arweave GraphQL doesn't work in this version, because bundlr Devnet doesn't support this. ---- */
+
             let idList = [];
             data?.transactions?.edges.map((node) => {
                 idList.push(node?.node.id)

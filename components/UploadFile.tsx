@@ -3,6 +3,8 @@ import { Box, Button, Text } from '@chakra-ui/react';
 import { useBundler } from '@/state/bundlr.context';
 import { useRef, useState } from 'react';
 
+
+// Upload files to the Arweave network and fetch files from Arweave network and list them.
 const UploadFile = () => {
     const { balance, uploadFile, files } = useBundler();
     const [URI, setURI] = useState('')

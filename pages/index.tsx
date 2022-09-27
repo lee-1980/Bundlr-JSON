@@ -19,6 +19,7 @@ const Home: NextPage = () => {
     return null;
   }
 
+  // check wallet connection
   if (!data) {
     return (
       <div className='justify-center items-center h-screen flex '>
@@ -31,7 +32,7 @@ const Home: NextPage = () => {
       </div>
     )
   }
-
+  // check if the current network is polygonMumbai
   if (activeChain && activeChain.id !== chainId.polygonMumbai) {
     return (
       <div className='justify-center items-center h-screen flex '>
@@ -44,7 +45,7 @@ const Home: NextPage = () => {
       </div>
     )
   }
-
+  // check the bundlr network instance
   if (!bundlrInstance) {
     return (
       <div className='justify-center items-center h-screen flex '>
@@ -58,7 +59,7 @@ const Home: NextPage = () => {
       </div>
     )
   }
-
+  // Check the balance deposited into bundlr node
   if (!balance || Number(balance) <= 0) {
     return (
       <div className='justify-center items-center h-screen flex '>
@@ -73,6 +74,7 @@ const Home: NextPage = () => {
     )
   }
 
+  // main home page
   return (
     <div className='justify-center items-center h-screen flex'>
       <Stack direction={['column', 'row']} justifyContent={'space-around'} width={'full'} alignItems={'center'}>

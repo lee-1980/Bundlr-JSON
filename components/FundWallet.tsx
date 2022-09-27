@@ -2,6 +2,9 @@ import React from 'react'
 import { Button, NumberDecrementStepper, NumberIncrementStepper, NumberInput, NumberInputField, NumberInputStepper, Text, VStack } from '@chakra-ui/react'
 import { useBundler } from '@/state/bundlr.context';
 
+
+// fundWallet which we will be using to add the funds
+
 const FundWallet = () => {
     const { fundWallet, balance } = useBundler();
     const [value, setValue] = React.useState('0.02')
